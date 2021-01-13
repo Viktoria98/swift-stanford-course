@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		343E8D5325AFA13300D242FA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343E8D5225AFA13300D242FA /* Model.swift */; };
+		343E8D5625AFA18100D242FA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343E8D5525AFA18100D242FA /* ViewModel.swift */; };
 		34BDD2E625AD0EF000CDEA06 /* CardGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BDD2E525AD0EF000CDEA06 /* CardGameApp.swift */; };
 		34BDD2E825AD0EF000CDEA06 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BDD2E725AD0EF000CDEA06 /* ContentView.swift */; };
 		34BDD2EA25AD0EF300CDEA06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BDD2E925AD0EF300CDEA06 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		343E8D5225AFA13300D242FA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		343E8D5525AFA18100D242FA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		34BDD2E225AD0EF000CDEA06 /* CardGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BDD2E525AD0EF000CDEA06 /* CardGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameApp.swift; sourceTree = "<group>"; };
 		34BDD2E725AD0EF000CDEA06 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			children = (
 				34BDD2E525AD0EF000CDEA06 /* CardGameApp.swift */,
 				34BDD2E725AD0EF000CDEA06 /* ContentView.swift */,
+				343E8D5225AFA13300D242FA /* Model.swift */,
+				343E8D5525AFA18100D242FA /* ViewModel.swift */,
 				34BDD2E925AD0EF300CDEA06 /* Assets.xcassets */,
 				34BDD2EE25AD0EF300CDEA06 /* Info.plist */,
 				34BDD2EB25AD0EF300CDEA06 /* Preview Content */,
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				343E8D5325AFA13300D242FA /* Model.swift in Sources */,
 				34BDD2E825AD0EF000CDEA06 /* ContentView.swift in Sources */,
+				343E8D5625AFA18100D242FA /* ViewModel.swift in Sources */,
 				34BDD2E625AD0EF000CDEA06 /* CardGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
