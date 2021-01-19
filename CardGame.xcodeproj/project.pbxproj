@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		341AD1E625B71F5F00F20E33 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341AD1E525B71F5F00F20E33 /* GridLayout.swift */; };
+		341AD1E925B7236500F20E33 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341AD1E825B7236500F20E33 /* Grid.swift */; };
+		341AD1ED25B7371200F20E33 /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341AD1EC25B7371200F20E33 /* Array+Only.swift */; };
 		343E8D5325AFA13300D242FA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343E8D5225AFA13300D242FA /* Model.swift */; };
 		343E8D5625AFA18100D242FA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343E8D5525AFA18100D242FA /* ViewModel.swift */; };
 		34BDD2E625AD0EF000CDEA06 /* CardGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BDD2E525AD0EF000CDEA06 /* CardGameApp.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		341AD1E525B71F5F00F20E33 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		341AD1E825B7236500F20E33 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		341AD1EC25B7371200F20E33 /* Array+Only.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
 		343E8D5225AFA13300D242FA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		343E8D5525AFA18100D242FA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		34BDD2E225AD0EF000CDEA06 /* CardGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +43,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		341AD1EF25B7373C00F20E33 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				341AD1EC25B7371200F20E33 /* Array+Only.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		341AD1F025B7375100F20E33 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				343E8D5225AFA13300D242FA /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		341AD1F125B7376200F20E33 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34BDD2E725AD0EF000CDEA06 /* ContentView.swift */,
+				341AD1E825B7236500F20E33 /* Grid.swift */,
+				341AD1E525B71F5F00F20E33 /* GridLayout.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		341AD1F225B7376900F20E33 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				343E8D5525AFA18100D242FA /* ViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		34BDD2D925AD0EF000CDEA06 = {
 			isa = PBXGroup;
 			children = (
@@ -56,12 +96,13 @@
 		34BDD2E425AD0EF000CDEA06 /* CardGame */ = {
 			isa = PBXGroup;
 			children = (
+				341AD1F225B7376900F20E33 /* ViewModels */,
+				341AD1F125B7376200F20E33 /* Views */,
+				341AD1F025B7375100F20E33 /* Models */,
+				341AD1EF25B7373C00F20E33 /* Extensions */,
 				34BDD2E525AD0EF000CDEA06 /* CardGameApp.swift */,
-				34BDD2E725AD0EF000CDEA06 /* ContentView.swift */,
-				343E8D5225AFA13300D242FA /* Model.swift */,
-				343E8D5525AFA18100D242FA /* ViewModel.swift */,
-				34BDD2E925AD0EF300CDEA06 /* Assets.xcassets */,
 				34BDD2EE25AD0EF300CDEA06 /* Info.plist */,
+				34BDD2E925AD0EF300CDEA06 /* Assets.xcassets */,
 				34BDD2EB25AD0EF300CDEA06 /* Preview Content */,
 			);
 			path = CardGame;
@@ -146,8 +187,11 @@
 			files = (
 				343E8D5325AFA13300D242FA /* Model.swift in Sources */,
 				34BDD2E825AD0EF000CDEA06 /* ContentView.swift in Sources */,
+				341AD1E625B71F5F00F20E33 /* GridLayout.swift in Sources */,
 				343E8D5625AFA18100D242FA /* ViewModel.swift in Sources */,
 				34BDD2E625AD0EF000CDEA06 /* CardGameApp.swift in Sources */,
+				341AD1ED25B7371200F20E33 /* Array+Only.swift in Sources */,
+				341AD1E925B7236500F20E33 /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
