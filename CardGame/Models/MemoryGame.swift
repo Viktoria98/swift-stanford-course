@@ -5,6 +5,8 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     var theme: GameThemes.Theme
     var score = 0
     
+    private var dateWhenLastOnlyOneFaceUpCardWasChoosen: Date!
+    
     var indexOfTheOnlyOneFaceUpCard: Int? {
         get { cards.indices.filter{ cards[$0].isFaceUp }.only }
         set {
@@ -21,7 +23,9 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                 if cards[choosenIndex].content == cards[potentialMatchIndex].content {
                     cards[choosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
-                    score += 2
+                    
+                    let secondsPassed = Int(Date().timeIntervalSince(dateWhenLastOnlyOneFaceUpCardWasChoosen)) % 60
+                    score = secondsPassed < 5 ? score + 5 - Int(secondsPassed) : score
                 } else {
                     score = cards[choosenIndex].alreadyBeenSeen ? score - 1 : score
                     score = cards[potentialMatchIndex].alreadyBeenSeen ? score - 1 : score
@@ -31,6 +35,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                 cards[potentialMatchIndex].alreadyBeenSeen = true
             } else {
                 indexOfTheOnlyOneFaceUpCard = choosenIndex
+                dateWhenLastOnlyOneFaceUpCardWasChoosen = Date()
             }
         }
     }

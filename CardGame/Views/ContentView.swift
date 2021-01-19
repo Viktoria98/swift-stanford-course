@@ -53,7 +53,7 @@ struct CardView: View {
         }
         .font(Font.system(size: fontSize(for: size)))
     }
-
+    
 }
 
 struct GameHeaderView: View {
