@@ -4,18 +4,20 @@ struct ContentView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
     
     var body: some View {
-        Button(action: {
-            viewModel.newGame()
-        }, label: {
-            Text("New Game")
-        })
+        GameHeaderView(
+            themeName: viewModel.theme.name,
+            newGameAction: {
+                viewModel.createNewGame()
+            }
+        )
+        .foregroundColor(viewModel.theme.color)
         Grid(viewModel.cards) { card in
             CardView(card: card)
                 .onTapGesture { viewModel.choose(card: card) }
-                .padding(10)
+                .padding(5)
         }
         .padding()
-        .foregroundColor(.yellow)
+        .foregroundColor(viewModel.theme.color)
     }
 }
 
@@ -31,7 +33,7 @@ struct CardView: View {
     func body(for size: CGSize) -> some View {
         ZStack {
             if card.isFaceUp {
-                RoundedRectangle(cornerRadius: cornerRadius).fill(Color.yellow)
+                RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
                 RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: 3)
                 Text(card.content)
             } else {
@@ -50,6 +52,26 @@ struct CardView: View {
     
     func fontSize(for size: CGSize) -> CGFloat {
         min(size.width, size.height) * fontScaleFactor
+    }
+}
+
+struct GameHeaderView: View {
+    var themeName: String
+    var newGameAction: () -> Void
+    
+    var body: some View {
+        Button(action: {
+            newGameAction()
+        }, label: {
+            Text("New Game")
+                .padding(5)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.gray, lineWidth: 1.0)
+                )
+        })
+        .padding()
+        Text(themeName)
     }
 }
 
