@@ -3,6 +3,7 @@ import Foundation
 struct MemoryGame<CardContent> where CardContent: Equatable {
     var cards = Array<Card>()
     var theme: GameThemes.Theme
+    var score = 0
     
     var indexOfTheOnlyOneFaceUpCard: Int? {
         get { cards.indices.filter{ cards[$0].isFaceUp }.only }
@@ -20,8 +21,14 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                 if cards[choosenIndex].content == cards[potentialMatchIndex].content {
                     cards[choosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
+                    score += 2
+                } else {
+                    score = cards[choosenIndex].alreadyBeenSeen ? score - 1 : score
+                    score = cards[potentialMatchIndex].alreadyBeenSeen ? score - 1 : score
                 }
                 cards[choosenIndex].isFaceUp = true
+                cards[choosenIndex].alreadyBeenSeen = true
+                cards[potentialMatchIndex].alreadyBeenSeen = true
             } else {
                 indexOfTheOnlyOneFaceUpCard = choosenIndex
             }
@@ -42,6 +49,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         var id: Int
         var isFaceUp = false
         var isMatched = false
+        var alreadyBeenSeen = false
         var content: CardContent
     }
 }

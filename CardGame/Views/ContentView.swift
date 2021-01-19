@@ -6,6 +6,7 @@ struct ContentView: View {
     var body: some View {
         GameHeaderView(
             themeName: viewModel.theme.name,
+            score: viewModel.score,
             newGameAction: {
                 viewModel.createNewGame()
             }
@@ -30,6 +31,14 @@ struct CardView: View {
         }
     }
     
+    let cornerRadius: CGFloat = 10
+    let edgeLineWidth: CGFloat = 3
+    let fontScaleFactor: CGFloat = 0.75
+    
+    func fontSize(for size: CGSize) -> CGFloat {
+        min(size.width, size.height) * fontScaleFactor
+    }
+    
     func body(for size: CGSize) -> some View {
         ZStack {
             if card.isFaceUp {
@@ -44,19 +53,12 @@ struct CardView: View {
         }
         .font(Font.system(size: fontSize(for: size)))
     }
-    
-    // MARK: - Drawing consstants
-    let cornerRadius: CGFloat = 10
-    let edgeLineWidth: CGFloat = 3
-    let fontScaleFactor: CGFloat = 0.75
-    
-    func fontSize(for size: CGSize) -> CGFloat {
-        min(size.width, size.height) * fontScaleFactor
-    }
+
 }
 
 struct GameHeaderView: View {
     var themeName: String
+    var score: Int
     var newGameAction: () -> Void
     
     var body: some View {
@@ -71,16 +73,13 @@ struct GameHeaderView: View {
                 )
         })
         .padding()
-        Text(themeName)
+        HStack {
+            Text(themeName)
+            Text(String(score))
+        }
+        
     }
 }
-
-
-
-
-
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

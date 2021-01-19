@@ -18,6 +18,10 @@ class EmojiMemoryGame: ObservableObject {
         model.cards
     }
     
+    var score: Int {
+        model.score
+    }
+    
     func choose(card: MemoryGame<String>.Card) {
         model.choose(card)
     }
